@@ -1,0 +1,10 @@
+{% block content %}
+  <form method="POST" action="http://localhost:5000/zipcode">
+      {{ form.hidden_tag() }}
+      {% for message in get_flashed_messages() %}
+      {{ message }}
+      {% endfor %}
+      <p>{{ form.zip.label }}{{ form.zip() }}</p>
+      {{ form.submit() }}
+  </form>
+{% endblock %}
